@@ -87,3 +87,10 @@ class Board:
 			[piece.reset_for_new_board() for piece in self.pieces]
 
 			self.searcher.build(self)
+
+	def __eq__(self, other):
+		return self.pieces == other.pieces and \
+			   self.player_turn == other.player_turn and \
+			   self.width == other.width and \
+			   self.height == other.height and \
+			   self.rows_per_user_with_pieces == other.rows_per_user_with_pieces

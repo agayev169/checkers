@@ -37,3 +37,9 @@ class Game:
 
 	def whose_turn(self):
 		return self.board.player_turn
+
+	def __eq__(self, other):
+		return self.board == other.board and \
+			   self.moves == other.moves and \
+			   self.consecutive_noncapture_move_limit == other.consecutive_noncapture_move_limit and \
+			   self.moves_since_last_capture == other.moves_since_last_capture

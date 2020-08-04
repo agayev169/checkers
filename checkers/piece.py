@@ -109,3 +109,10 @@ class Piece:
 
 		if name == 'player':
 			self.other_player = 1 if value == 2 else 2
+
+	def __eq__(self, other):
+		return self.player == other.player and \
+			   self.other_player == other.other_player and \
+			   self.king == other.king and \
+			   self.captured == other.captured and \
+			   self.position == other.position
