@@ -43,3 +43,9 @@ class Game:
 			   self.moves == other.moves and \
 			   self.consecutive_noncapture_move_limit == other.consecutive_noncapture_move_limit and \
 			   self.moves_since_last_capture == other.moves_since_last_capture
+	
+	def __ne__(self, other):
+		return not (self == other)
+
+	def __hash__(self):
+		return hash(tuple(self.board.pieces))

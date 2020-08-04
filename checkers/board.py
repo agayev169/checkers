@@ -94,3 +94,6 @@ class Board:
 			   self.width == other.width and \
 			   self.height == other.height and \
 			   self.rows_per_user_with_pieces == other.rows_per_user_with_pieces
+
+	def __ne__(self, other):
+		return not (self == other)

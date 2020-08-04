@@ -116,3 +116,9 @@ class Piece:
 			   self.king == other.king and \
 			   self.captured == other.captured and \
 			   self.position == other.position
+	
+	def __ne__(self, other):
+		return not (self == other)
+
+	def __hash__(self):
+		return hash((self.player, self.other_player, self.king, self.captured, self.position))
